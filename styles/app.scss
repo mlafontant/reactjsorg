@@ -1,0 +1,21 @@
+.header, .footer {
+  background-color: black;
+  color: white;
+  display: block;
+  height: 50px;
+  width: 100%;
+}
+
+.unstyled {
+  list-style-type: none; 
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+li {
+  a {
+    text-decoration: none;
+  }
+}
