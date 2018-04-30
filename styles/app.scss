@@ -1,11 +1,85 @@
-.header, .footer {
+* { //Universal selector
+  margin: 0px; // undo the default margins and padding
+  padding: 0px;
+  box-sizing: border-box; // does not count margins and padding into heigh and width calc
+}
+
+body { // everything related to font is included in the body not uni selector. 
+  font-family: Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7; // 1.7 times bigger than the default line height
+  color: #777;
+  padding: 30px;
+}
+
+.header {
+  height: 95vh; // 95% of the viewport height
+  // specify background img path with url, note images can be layered
+  // to specify gradients, typicaly the background-img prop is used, to see the image below, we must switch from HEX to RGB to specify the opacity
+  background-image: linear-gradient(
+    to right bottom,
+    rgba(126, 213, 111, 0.8),
+    rgba(40, 180, 131, 0.8)),
+    url("/../assets/hero.jpg");
+  // "cover" auto fits the element into the viewport
+  background-size: cover;
+  // "top" prevents the top of the element from getting cropped as the viewport changes.
+  background-position: top;
+  // The points of a clip path move clockwise from 0,0 / top left
+  // polygon (top left, top right, bottom right, bottom left)
+  // use "Clippy" tool to create css clip path for custom & defined shapes
+  clip-path: polygon(0% 0%, 100% 0%, 100% 75vh, 0% 100%);
+  position: relative;
+  
+  
+  .logo-container {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    
+    .logo {
+      height: 30px;
+    }
+  }
+  .text-box {
+    position: absolute;
+    // top and left refer to percent of parent
+    top: 40%;
+    left: 50%;
+    // transform refers to the element itself. 
+    // Shifting half of the width and height. In a way, recentering it
+    transform: translate(-50% ,-50%);
+  }
+  
+  .heading-primary {
+    color: white;
+    text-transform: uppercase;
+  }
+  
+  .heading-primary-main {
+    display: block;
+    font-size: 60px;
+    font-weight: 400;
+    letter-spacing: 35px;
+  }
+  
+  .heading-primary-sub {
+    display: block;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 24px;
+  }
+}
+
+
+.footer {
   background-color: black;
   color: white;
   display: block;
   height: 50px;
   width: 100%;
 }
-
 .unstyled {
   list-style-type: none; 
   margin: 0;
